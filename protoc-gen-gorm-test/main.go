@@ -14,4 +14,5 @@ func main() {
 		return
 	}
 	conn.AutoMigrate(&user_pb.User{})
+	_ = user_pb.UserServiceDefaultServer{DB: conn}
 }

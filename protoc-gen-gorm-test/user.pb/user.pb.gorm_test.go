@@ -39,7 +39,7 @@ func TestUserServiceDefaultServer_Create(t *testing.T) {
 func TestUserServiceDefaultServer_Read(t *testing.T) {
 	conn := ConnectDB(t)
 	server := UserServiceDefaultServer{DB: conn}
-	t.Run("Create", func(t *testing.T) {
+	t.Run("Read", func(t *testing.T) {
 		resp, err := server.Read(context.Background(), &ReadUserRequest{Id: 1})
 		if err != nil {
 			t.Fatal(err)
@@ -52,7 +52,7 @@ func TestUserServiceDefaultServer_Read(t *testing.T) {
 func TestUserServiceDefaultServer_Update(t *testing.T) {
 	conn := ConnectDB(t)
 	server := UserServiceDefaultServer{DB: conn}
-	t.Run("Create", func(t *testing.T) {
+	t.Run("Update", func(t *testing.T) {
 		resp, err := server.UpdateUser(context.Background(), &UpdateUserRequest{
 			Payload: &User{
 				Id:          1,
@@ -74,7 +74,7 @@ func TestUserServiceDefaultServer_Update(t *testing.T) {
 func TestUserServiceDefaultServer_Delete(t *testing.T) {
 	conn := ConnectDB(t)
 	server := UserServiceDefaultServer{DB: conn}
-	t.Run("Create", func(t *testing.T) {
+	t.Run("Delete", func(t *testing.T) {
 		resp, err := server.Delete(context.Background(), &DeleteUserRequest{Id: 1})
 		if err != nil {
 			t.Fatal(err)
