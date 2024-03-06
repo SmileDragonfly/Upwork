@@ -22,7 +22,7 @@ protoc --proto_path="C:\Users\datdo\go\pkg\mod\github.com\infobloxopen\protoc-ge
   - Response messages for Create, Read, and Update require an Ormable Type in a field named result and for List a repeated Ormable Type named results.
   - Delete methods require the (gorm.method).object_type option to indicate which Ormable Type it should delete, and has no response type requirements.
 6. For this project
-- Run main: go run -v
+- Run main: go run .
 - Run test CRUD:
   - Create: go test -run TestUserServiceDefaultServer_Create
   - Read: go test -run TestUserServiceDefaultServer_Read
