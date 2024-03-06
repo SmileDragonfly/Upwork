@@ -1,0 +1,21 @@
+syntax = "proto3";
+option go_package = "user";
+
+message User {
+  option (gorm.server).autogen = true;
+  uint64 id = 1;
+  string name = 2;
+  string emails = 3;
+  string home_address = 4;
+}
+
+service UserService {
+  rpc CreateUser (User) returns (User) {
+  }
+  rpc ReadUser (User) returns (User) {
+  }
+  rpc UpdateUser (User) returns (User) {
+  }
+  rpc DeleteUser (User) returns (User) {
+  }
+}
